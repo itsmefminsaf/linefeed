@@ -2,6 +2,7 @@ import "../ui/tailwind.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { cookies } from "next/headers";
+import { cookies } from "next/headers";
 
 const roboto = Roboto({
   subsets: ["latin"],

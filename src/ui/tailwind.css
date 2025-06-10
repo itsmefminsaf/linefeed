@@ -2,6 +2,8 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-light: hsl(0, 0%, 90%);
   --color-dark: hsl(0, 0%, 10%);
@@ -9,8 +11,10 @@
 
 @layer base {
   .bg {
+  .bg {
     @apply bg-light text-dark dark:bg-dark dark:text-light;
   }
+  .fg {
   .fg {
     @apply bg-dark text-light dark:bg-light dark:text-dark;
   }
