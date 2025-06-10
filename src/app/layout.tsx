@@ -1,4 +1,5 @@
 import "../ui/tailwind.css";
+import NavBar from "@/ui/components/NavBar";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 
@@ -19,9 +20,8 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <html lang="en">
-      <body
-        className={`${roboto.className} bg-light text-dark dark:bg-dark dark:text-light antialiased`}
-      >
+      <body className={`${roboto.className} light antialiased`}>
+        <NavBar />
         {children}
       </body>
     </html>
