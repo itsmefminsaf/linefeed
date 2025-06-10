@@ -1,21 +1,17 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-light: hsl(0, 0%, 90%);
   --color-dark: hsl(0, 0%, 10%);
 }
 
 @layer base {
-  .light {
+  .bg {
     @apply bg-light text-dark dark:bg-dark dark:text-light;
   }
-  .dark {
+  .fg {
     @apply bg-dark text-light dark:bg-light dark:text-dark;
-  }
-  .bord-light {
-    @apply border-light dark:border-dark;
-  }
-  .bord-dark {
-    @apply border-dark dark:border-light;
   }
 }

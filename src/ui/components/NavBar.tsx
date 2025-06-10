@@ -6,18 +6,25 @@ import { useState } from "react";
 import { BiHeart, BiHome, BiMenu, BiQuestionMark, BiX } from "react-icons/bi";
 import { IoIosPeople } from "react-icons/io";
 import { IoPerson } from "react-icons/io5";
+import toggleTheme from "@/util/toggleTheme";
+import { MdDarkMode } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
 
 const NavBar = () => {
   const [isNavOpen, setNavOpen] = useState(false);
   return (
-    <nav className="bord-dark item-center flex justify-between border-b-4 p-3">
+    <nav className="item-center flex justify-between border-b-4 p-3">
       <Logo />
       <button onClick={() => setNavOpen(!isNavOpen)}>
         {isNavOpen ? <BiX className="size-7" /> : <BiMenu className="size-7" />}
       </button>
       <ul
-        className={`${isNavOpen ? "left-[0%]" : "left-[100%]"} dark fixed top-16 flex w-screen flex-col gap-3 py-5 pl-[10%] duration-300`}
+        className={`${isNavOpen ? "left-[0%]" : "left-[100%]"} fg fixed top-16 flex w-screen flex-col gap-3 p-[10%] duration-300`}
       >
+        <button onClick={toggleTheme} className="self-end">
+          <CiLight className="hidden size-7 dark:block" />
+          <MdDarkMode className="block size-7 dark:hidden" />
+        </button>
         <li className="flex items-center gap-2 text-lg font-bold">
           <BiHome />
           <Link href="/">Home</Link>
@@ -38,14 +45,14 @@ const NavBar = () => {
           <IoPerson />
           <Link href="/profile">My Profile</Link>
         </li>
-        <div className="border-t-dark flex items-center gap-3 py-2">
+        <div className="flex items-center gap-3 py-2">
           <Link
             href="/auth/sign-in"
-            className="bord-light rounded-full border-2 px-5 py-2"
+            className="border-dark dark:border-light rounded-full border-2 px-5 py-2"
           >
             Sign In
           </Link>
-          <Link className="light rounded-full px-5 py-2" href="/auth/sign-up">
+          <Link className="bg rounded-full px-5 py-2" href="/auth/sign-up">
             Sign Up
           </Link>
         </div>
