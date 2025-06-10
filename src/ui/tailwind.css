@@ -14,4 +14,7 @@
   .fg {
     @apply bg-dark text-light dark:bg-light dark:text-dark;
   }
+  .nav-link {
+    @apply border-light dark:border-dark flex items-center gap-2 border-b-2 text-lg font-bold;
+  }
 }

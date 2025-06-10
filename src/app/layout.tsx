@@ -1,5 +1,4 @@
 import "../ui/tailwind.css";
-import NavBar from "@/ui/components/NavBar";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { cookies } from "next/headers";
@@ -20,12 +19,13 @@ export const metadata: Metadata = {
 
 const RootLayout = async ({
   children,
-}: Readonly<{ children: React.ReactNode }>) => {
+  nav,
+}: Readonly<{ children: React.ReactNode; nav: React.ReactNode }>) => {
   const theme = (await cookies()).get("theme")?.value || "light";
   return (
     <html lang="en" className={theme === "dark" ? "dark" : ""}>
       <body className={`${roboto.className} bg antialiased`}>
-        <NavBar />
+        {nav}
         {children}
       </body>
     </html>

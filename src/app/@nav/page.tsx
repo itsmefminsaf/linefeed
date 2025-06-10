@@ -25,30 +25,30 @@ const NavBar = () => {
           <CiLight className="hidden size-7 dark:block" />
           <MdDarkMode className="block size-7 dark:hidden" />
         </button>
-        <li className="flex items-center gap-2 text-lg font-bold">
+        <li className="nav-link">
           <BiHome />
           <Link href="/">Home</Link>
         </li>
-        <li className="flex items-center gap-2 text-lg font-bold">
+        <li className="nav-link">
           <IoIosPeople />
           <Link href="/authors">Authors</Link>
         </li>
-        <li className="flex items-center gap-2 text-lg font-bold">
+        <li className="nav-link">
           <BiHeart />
           <Link href="/genres">Genres</Link>
         </li>
-        <li className="flex items-center gap-2 text-lg font-bold">
+        <li className="nav-link">
           <BiQuestionMark />
           <Link href="/about">About</Link>
         </li>
-        <li className="flex items-center gap-2 text-lg font-bold">
+        <li className="nav-link">
           <IoPerson />
           <Link href="/profile">My Profile</Link>
         </li>
         <div className="flex items-center gap-3 py-2">
           <Link
             href="/auth/sign-in"
-            className="border-dark dark:border-light rounded-full border-2 px-5 py-2"
+            className="border-light dark:border-dark rounded-full border-2 px-5 py-2"
           >
             Sign In
           </Link>
